@@ -1,0 +1,13 @@
+<div class="container">
+  <button class="btn btn-success mt-3 mb-3" [routerLink]="['/addAnimal']">Afegir gosset</button>
+  <div class="row">
+    <div *ngFor="let dog of getDogs()" class="col-md-4 mb-3" (click)="selectDog(dog)" [routerLink]="['/pet', dog.name]">
+      <div class="card">
+        <img [src]="dog.main_image" class="card-img-top" alt="Imagen" height="300" width="640">
+        <div class="card-body">
+          <h5 class="card-title text-center">{{ dog.name }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,22 @@
+<div class="container mt-5">
+    <h1><strong>{{selectedPet?.name?.toLocaleUpperCase()}} TIMETABLE</strong></h1>
+    <div class="row">
+        <div class="col">
+            <button type="button" class="btn" [ngClass]="{ 'btn-primary': selectedButton === 'today' }" (click)="selectedButton = 'today'; updateHours()">{{today.toLocaleDateString()}}</button>
+            <button type="button" class="btn" [ngClass]="{ 'btn-primary': selectedButton === 'tomorrow' }" (click)="selectedButton = 'tomorrow'; updateHours()">{{tomorrow.toLocaleDateString()}}</button>
+            <button type="button" class="btn" [ngClass]="{ 'btn-primary': selectedButton === 'pastTomorrow' }" (click)="selectedButton = 'pastTomorrow'; updateHours()">{{pastTomorrow.toLocaleDateString()}}</button>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col">
+            <ul class="list-group">
+                <li *ngFor="let hora of horas" class="list-group-item d-flex justify-content-between align-items-center">
+                    {{ hora.hora }} - {{ hora.hora + 1 }}
+                    <span *ngIf="hora.reservado" class="badge bg-danger">Reservado</span>
+                    <span *ngIf="!hora.reservado" class="badge bg-success">Lliure</span>
+                    <button *ngIf="!hora.reservado" type="button" class="btn btn-primary">Reservar</button>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

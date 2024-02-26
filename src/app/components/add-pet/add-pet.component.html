@@ -1,0 +1,94 @@
+<div class="container mt-3 mb-3">
+    <h2 class="mb-4" *ngIf="addingAnimal">Add an animal</h2>
+    <h2 class="mb-4" *ngIf="editingAnimal">Edit animal</h2>
+    <form id="animalForm">
+        <div class="mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" class="form-control" id="name" name="name" required [(ngModel)]="name">
+        </div>
+
+        <div class="mb-3">
+            <label for="type" class="form-label">Type:</label>
+            <select id="type" name="type" class="form-select" required [(ngModel)]="type">
+                <option value="" disabled selected>Choose...</option>
+                <option value="Cat">Cat</option>
+                <option value="Dog">Dog</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="main_image" class="form-label">Main Image:</label>
+            <input type="file" class="form-control" id="main_image" name="main_image" accept="image/*" required (change)="onMainImageChange($event)">
+          </div>
+
+        <div class="mb-3">
+            <label for="carousel_images" class="form-label">Carousel Images:</label>
+            <input type="file" class="form-control" id="carousel_images" name="carousel_images" accept="image/*" multiple required (change)="onCarouselImagesChange($event)">
+        </div>
+
+        <div class="mb-3">
+            <label for="biography" class="form-label">Biography:</label>
+            <textarea id="biography" name="biography" class="form-control" required [(ngModel)]="biographyString"></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label for="sex" class="form-label">Sex:</label>
+            <select id="sex" name="sex" class="form-select" required [(ngModel)]="sex">
+                <option value="" disabled selected>Choose...</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label for="birthdate" class="form-label">Birthdate:</label>
+            <input type="date" id="birthdate" name="birthdate" class="form-control" [(ngModel)]="birthdate" (input)="calculateAge()" required>
+        </div>
+        
+        <div class="mb-3">
+            <label for="age" class="form-label">Age:</label>
+            <input type="text" id="age" name="age" class="form-control" [(ngModel)]="age" readonly disabled>
+        </div>
+        
+
+        <div class="mb-3">
+            <label class="form-label">Has Chip?</label><br>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="chip_yes" name="chip" value="Yes" required [(ngModel)]="chip">
+                <label class="form-check-label" for="chip_yes">Yes</label>
+            </div>
+            <div class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" id="chip_no" name="chip" value="No" required [(ngModel)]="chip">
+                <label class="form-check-label" for="chip_no">No</label>
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <label for="vaccines" class="form-label">Vaccines:</label>
+            <textarea id="vaccines" name="vaccines" class="form-control" [(ngModel)]="vaccinesString"></textarea>
+            <small id="passwordHelpBlock" class="form-text text-muted">
+                Please enter vaccines one by one by inserting a line break between them
+            </small>
+        </div>
+
+        <div class="mb-3">
+            <label for="diseases" class="form-label">Diseases:</label>
+            <textarea id="diseases" name="diseases" class="form-control" [(ngModel)]="diseasesString"></textarea>
+            <small id="passwordHelpBlock" class="form-text text-muted">
+                Please enter diseases one by one by inserting a line break between them
+            </small>
+        </div>
+
+        <div class="mb-3">
+            <label for="observations" class="form-label">Observations:</label>
+            <textarea id="observations" name="observations" class="form-control" [(ngModel)]="observationsString"></textarea>
+            <small id="passwordHelpBlock" class="form-text text-muted">
+                Please enter observations one by one by inserting a line break between them
+            </small>
+        </div>
+
+        <input type="button" value="Create Animal" class="btn btn-success" (click)="createAnimal()" *ngIf="addingAnimal">
+        <input type="button" value="Save new info" class="btn btn-success" (click)="editAnimal()" *ngIf="editingAnimal">
+
+    </form>
+</div>

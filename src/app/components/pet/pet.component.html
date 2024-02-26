@@ -1,0 +1,68 @@
+<!-- pet.component.html -->
+<div class="container-fluid">
+  <div class="row">
+    <!-- Imagen a la izquierda -->
+    <div class="col-lg-6 mb-4 mt-4">
+      <div id="carouselExampleFade" class="carousel slide carousel-fade h-100">
+        <div class="carousel-inner h-100">
+          <div class="carousel-item active h-100">
+            <img [src]="selectedPet.main_image" class="d-block w-100 h-100" alt="Pet Image" *ngIf="selectedPet !== null">
+          </div>
+          <!-- Puedes agregar más imágenes según tus necesidades -->
+        </div>
+        <!-- Controles del carrusel -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Detalles a la derecha -->
+    <div class="col-lg-6 mb-4">
+      <div class="container mt-4">
+        <div class="row">
+          <div class="col-md-12 mb-4">
+            <h2><strong>{{selectedPet?.name?.toLocaleUpperCase()}}</strong></h2>
+            <div *ngIf="selectedPet !== null">
+              <strong>History</strong>
+              <p *ngFor="let history of selectedPet.biography">{{ history }}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-4">
+            <h2>Characteristics</h2>
+            <ul>
+              <li *ngIf="selectedPet!==null"><strong>Genre:</strong> {{ selectedPet.sex }}</li>
+              <li *ngIf="selectedPet!==null"><strong>Birthdate:</strong> {{ selectedPet.birthdate }}</li>
+              <li *ngIf="selectedPet!==null"><strong>Age:</strong> {{ selectedPet.age }}</li>
+              <li *ngIf="selectedPet!==null"><strong>Chip:</strong> {{ selectedPet.chip }}</li>
+              <li *ngIf="selectedPet!==null">
+                <strong>Vaccines:</strong>
+                <ol>
+                  <li *ngFor="let vaccines of selectedPet?.vaccines">{{ vaccines }}</li>
+                </ol>
+              </li>
+              <li *ngIf="selectedPet!==null"><strong>Diseases:</strong> {{ selectedPet.diseases }}</li>
+              <li *ngIf="selectedPet!==null">
+                <strong>Observations:</strong>
+                <ol>
+                  <li *ngFor="let observations of selectedPet?.observations">{{ observations }}</li>
+                </ol>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <button class="btn btn-success m-2" [routerLink]="['../../timetable/', selectedPet?.name]">Care for {{selectedPet?.name}}</button>
+        <button class="btn btn-light" style="border: 1px solid black" [routerLink]="['../../editAnimal/', selectedPet?.name]">Edit {{selectedPet?.name}}</button>
+        <button class="btn btn-danger m-2" *ngIf="selectedPet!==null" (click)="deleteAnimal(selectedPet)">Delete {{selectedPet.name}}</button>
+      </div>
+    </div>
+  </div>
+</div>

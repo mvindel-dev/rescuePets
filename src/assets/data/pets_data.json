@@ -1,0 +1,402 @@
+{
+  "pets": [
+    {
+      "name": "Whiskers",
+      "type": "Cat",
+      "main_image": "assets/img/catsPics/mainPics/whiskers.jpg",
+      "carousel_imgs": ["img1_url_cat1", "img2_url_cat1", "img3_url_cat1"],
+      "biography": [
+        "Whiskers, a charming tabby with an adventurous spirit, was born on a sunny spring day in 2019.",
+        "From his early days as a playful kitten, Whiskers displayed a love for exploring every nook and cranny.",
+        "His curiosity often led him to unexpected places, making him a source of joy and occasional mischief for the family.",
+        "As Whiskers grew, so did his affectionate nature. He developed a particular fondness for sunny spots, where he could nap and watch the world go by.",
+        "Now a mature and elegant cat, Whiskers continues to bring laughter and warmth to his household, his distinctive whiskers always twitching with curiosity."
+      ],
+      "sex": "Male",
+      "birthdate": "2019-03-10",
+      "age": 4,
+      "chip": "Yes",
+      "vaccines": ["Feline Calicivirus Vaccine", "Feline Leukemia Vaccine"],
+      "diseases": ["None"],
+      "observations": [
+        "Whiskers is very friendly with children.",
+        "He prefers wet food over dry food."
+      ]
+    },
+    {
+      "name": "Mittens",
+      "type": "Cat",
+      "main_image": "assets/img/catsPics/mainPics/mittens.jpg",
+      "carousel_imgs": ["img1_url_cat2", "img2_url_cat2", "img3_url_cat2"],
+      "biography": [
+        "Mittens, the epitome of feline grace and charm, was born on a quiet summer afternoon in 2018.",
+        "From the beginning, Mittens exhibited a regal demeanor, her luxuriously soft fur and emerald-green eyes capturing the hearts of all who met her.",
+        "Her favorite pastime includes lounging on the windowsill, observing the world with an air of elegance and a touch of mystery.",
+        "Despite her initial shyness, Mittens is known for her gentle purrs and the way she delicately pads through the house, leaving a trail of warmth and grace behind."
+      ],
+      "sex": "Female",
+      "birthdate": "2018-07-18",
+      "age": 5,
+      "chip": "No",
+      "vaccines": ["Rabies Vaccine", "Feline Herpesvirus Vaccine"],
+      "diseases": ["Feline Asthma"],
+      "observations": [
+        "Mittens is a bit timid around other animals.",
+        "She has a preference for fish-flavored treats."
+      ]
+    },
+    {
+      "name": "Fluffy",
+      "type": "Cat",
+      "main_image": "assets/img/catsPics/mainPics/fluffy.jpg",
+      "carousel_imgs": ["img1_url_cat3", "img2_url_cat3", "img3_url_cat3"],
+      "biography": [
+        "Fluffy, the mischievous ball of fur, entered the world on a crisp autumn morning in 2020.",
+        "From the start, Fluffy's fluffy coat and playful antics charmed everyone around.",
+        "Fluffy enjoys climbing to the highest vantage points, surveying the world with a mix of curiosity and mischief.",
+        "Known for spontaneous bursts of energy and acrobatic jumps, Fluffy has become the household entertainer, leaving a trail of joy and laughter."
+      ],
+      "sex": "Male",
+      "birthdate": "2020-02-14",
+      "age": 3,
+      "chip": "Yes",
+      "vaccines": ["Feline Panleukopenia Vaccine", "Feline Rabies Vaccine"],
+      "diseases": ["None"],
+      "observations": [
+        "Fluffy is an excellent hunter.",
+        "He loves to play with feather toys."
+      ]
+    },
+    {
+      "name": "Shadow",
+      "type": "Cat",
+      "main_image": "assets/img/catsPics/mainPics/shadow.jpg",
+      "carousel_imgs": ["img1_url_cat4", "img2_url_cat4", "img3_url_cat4"],
+      "biography": [
+        "Shadow, the mysterious and enigmatic feline, graced the household on a moonlit night in 2017.",
+        "From the beginning, Shadow's sleek black fur and piercing green eyes set her apart as a captivating presence.",
+        "Preferring solitude and quiet moments, Shadow can often be found perched atop high surfaces, observing the world with a watchful gaze.",
+        "Despite her aloof exterior, Shadow's heart is filled with a deep affection for those she chooses to trust, creating a bond that lasts a lifetime."
+      ],
+      "sex": "Female",
+      "birthdate": "2017-11-30",
+      "age": 4,
+      "chip": "Yes",
+      "vaccines": ["Feline Calicivirus Vaccine", "Feline Leukemia Vaccine"],
+      "diseases": ["None"],
+      "observations": [
+        "Shadow is not a fan of loud noises.",
+        "She enjoys sunbathing by the window."
+      ]
+    },
+    {
+      "name": "Salem",
+      "type": "Cat",
+      "main_image": "assets/img/catsPics/mainPics/salem.jpg",
+      "carousel_imgs": ["img1_url_cat5", "img2_url_cat5", "img3_url_cat5"],
+      "biography": [
+        "Salem, the mysterious black cat with a magical aura, entered the household on a starry night in 2016.",
+        "From the start, Salem's presence brought an air of enchantment, and superstitions surrounding black cats were dispelled by his gentle and affectionate nature.",
+        "Known for his silky fur and piercing yellow eyes, Salem has become a symbol of good luck and companionship.",
+        "Whether curling up by the fireplace or chasing imaginary foes, Salem's antics bring joy and a touch of magic to the lives of those lucky enough to share their home with him."
+      ],
+      "sex": "Male",
+      "birthdate": "2016-09-22",
+      "age": 7,
+      "chip": "Yes",
+      "vaccines": ["Feline Calicivirus Vaccine", "Feline Leukemia Vaccine"],
+      "diseases": ["None"],
+      "observations": [
+        "Salem has a calming presence and gets along well with other cats.",
+        "He enjoys cozy spots and long naps."
+      ]
+    },
+    {
+      "name": "Luna",
+      "type": "Cat",
+      "main_image": "assets/img/catsPics/mainPics/luna.jpg",
+      "carousel_imgs": ["img1_url_cat6", "img2_url_cat6", "img3_url_cat6"],
+      "biography": [
+        "Luna, the graceful and nocturnal queen of the household, was born under the glow of the full moon in 2018.",
+        "Her silky silver fur and luminous eyes make her a captivating presence, especially during midnight strolls.",
+        "Luna's favorite pastime includes gazing out the window, as if contemplating the secrets of the night.",
+        "Known for her gentle demeanor and soothing purrs, Luna has a calming effect on everyone lucky enough to share their home with this celestial feline."
+      ],
+      "sex": "Female",
+      "birthdate": "2018-05-05",
+      "age": 4,
+      "chip": "No",
+      "vaccines": ["Rabies Vaccine", "Feline Herpesvirus Vaccine"],
+      "diseases": ["None"],
+      "observations": [
+        "Luna is great with children and enjoys being brushed.",
+        "She has a preference for feather toys."
+      ]
+    },
+    {
+      "name": "Oliver",
+      "type": "Cat",
+      "main_image": "assets/img/catsPics/mainPics/oliver.jpg",
+      "carousel_imgs": ["img1_url_cat7", "img2_url_cat7", "img3_url_cat7"],
+      "biography": [
+        "Oliver, the wise and distinguished tabby, graced the household with his presence on a crisp autumn day in 2015.",
+        "His orange and black stripes tell a tale of a seasoned adventurer, and his eyes gleam with the knowledge accumulated over the years.",
+        "Oliver enjoys quiet moments by the fireplace, where he reflects on the mysteries of life and imparts wisdom to the younger feline companions.",
+        "Known for his gentle purrs and wise counsel, Oliver is the pillar of support and knowledge for the entire household."
+      ],
+      "sex": "Male",
+      "birthdate": "2015-10-12",
+      "age": 8,
+      "chip": "Yes",
+      "vaccines": ["Feline Panleukopenia Vaccine", "Feline Rabies Vaccine"],
+      "diseases": ["None"],
+      "observations": [
+        "Oliver is good with children and enjoys sunbathing on lazy afternoons.",
+        "He has a preference for soft blankets."
+      ]
+    },
+    {
+      "name": "Smokey",
+      "type": "Cat",
+      "main_image": "assets/img/catsPics/mainPics/smokey.jpg",
+      "carousel_imgs": ["img1_url_cat8", "img2_url_cat8", "img3_url_cat8"],
+      "biography": [
+        "Smokey, the mysterious gray cat with an air of sophistication, entered the household on a foggy winter day in 2016.",
+        "His silver-gray fur and striking green eyes create an enigmatic presence that captures the attention of all who meet him.",
+        "Smokey is often found perched on high surfaces, observing the world with a stoic demeanor.",
+        "Known for his silent but impactful presence, Smokey brings a touch of mystery and elegance to the lives of those fortunate enough to share their home with him."
+      ],
+      "sex": "Male",
+      "birthdate": "2016-12-05",
+      "age": 7,
+      "chip": "No",
+      "vaccines": ["Feline Calicivirus Vaccine", "Feline Leukemia Vaccine"],
+      "diseases": ["None"],
+      "observations": [
+        "Smokey is reserved but enjoys gentle chin scratches.",
+        "He has a preference for a quiet and calm environment."
+      ]
+    },
+    {
+      "name": "Misty",
+      "type": "Cat",
+      "main_image": "assets/img/catsPics/mainPics/misty.jpg",
+      "carousel_imgs": ["img1_url_cat9", "img2_url_cat9", "img3_url_cat9"],
+      "biography": [
+        "Misty, the ethereal and gentle calico, entered the household on a misty spring morning in 2017.",
+        "Her unique blend of white, gray, and orange fur creates a kaleidoscope of colors that mirrors her diverse and loving personality.",
+        "Misty enjoys sunny afternoons, basking in the warmth of the sun and spreading positivity to everyone around.",
+        "Known for her friendly nature and harmonious interactions with other cats, Misty is a beacon of joy in the lives of those who call her family."
+      ],
+      "sex": "Female",
+      "birthdate": "2017-03-21",
+      "age": 6,
+      "chip": "Yes",
+      "vaccines": ["Rabies Vaccine", "Feline Herpesvirus Vaccine"],
+      "diseases": ["None"],
+      "observations": [
+        "Misty is great with children and enjoys playing with feather toys.",
+        "She has a preference for cozy blankets."
+      ]
+    },
+
+    {
+      "name": "Buddy",
+      "type": "Dog",
+      "main_image": "assets/img/dogsPics/mainPics/buddy.jpg",
+      "carousel_imgs": ["img1_url_dog1", "img2_url_dog1", "img3_url_dog1"],
+      "biography": [
+        "Buddy, a bundle of joy with a wagging tail, entered the world on a crisp autumn morning in 2017.",
+        "His boundless energy and affectionate nature make him the perfect companion for outdoor adventures.",
+        "Buddy is known for his loyalty, always ready to protect his family and play fetch in the backyard.",
+        "With a coat as golden as the sun, Buddy brings warmth and happiness wherever he goes."
+      ],
+      "sex": "Male",
+      "birthdate": "2017-11-02",
+      "age": 6,
+      "chip": "Yes",
+      "vaccines": ["Canine Distemper Vaccine", "Canine Parvovirus Vaccine"],
+      "diseases": ["None"],
+      "observations": [
+        "Buddy needs regular exercise to stay happy.",
+        "He enjoys playing fetch in the backyard."
+      ]
+    },
+    {
+      "name": "Daisy",
+      "type": "Dog",
+      "main_image": "assets/img/dogsPics/mainPics/daisy.jpg",
+      "carousel_imgs": ["img1_url_dog2", "img2_url_dog2", "img3_url_dog2"],
+      "biography": [
+        "Daisy, a gentle soul with a heart of gold, graced the world with her presence on a winter day in 2020.",
+        "Her fluffy coat and soulful eyes capture the essence of her warm and loving personality.",
+        "Daisy is well-behaved, enjoying cuddles on the couch and bringing smiles to everyone she meets.",
+        "Despite her calm demeanor, Daisy is always up for a playful romp in the backyard."
+      ],
+      "sex": "Female",
+      "birthdate": "2020-01-15",
+      "age": 2,
+      "chip": "No",
+      "vaccines": ["Lyme Disease Vaccine", "Bordetella Vaccine"],
+      "diseases": ["Canine Arthritis"],
+      "observations": [
+        "Daisy is good with cats and other small pets.",
+        "She enjoys cuddling on the couch."
+      ]
+    },
+    {
+      "name": "Charlie",
+      "type": "Dog",
+      "main_image": "assets/img/dogsPics/mainPics/charlie.jpg",
+      "carousel_imgs": ["img1_url_dog3", "img2_url_dog3", "img3_url_dog3"],
+      "biography": [
+        "Charlie, the spirited and adventurous canine, entered the household on a sunny spring day in 2019.",
+        "From the beginning, Charlie's boundless enthusiasm and love for exploration made him the heart of the family.",
+        "Known for his playful antics and love for outdoor activities, Charlie is the perfect companion for hiking trails and camping adventures.",
+        "With his expressive eyes and wagging tail, Charlie brings joy and laughter to every corner of the household."
+      ],
+      "sex": "Male",
+      "birthdate": "2019-04-05",
+      "age": 4,
+      "chip": "Yes",
+      "vaccines": ["Rabies Vaccine", "Canine Distemper Vaccine"],
+      "diseases": ["None"],
+      "observations": [
+        "Charlie is great with kids and other pets.",
+        "He loves water and enjoys swimming."
+      ]
+    },
+    {
+      "name": "Lucy",
+      "type": "Dog",
+      "main_image": "assets/img/dogsPics/mainPics/lucy.jpg",
+      "carousel_imgs": ["img1_url_dog4", "img2_url_dog4", "img3_url_dog4"],
+      "biography": [
+        "Lucy, the gentle and affectionate soul, entered the household on a cool autumn evening in 2018.",
+        "Her soft fur and warm eyes make her an instant source of comfort and joy for all who meet her.",
+        "Lucy is known for her calm demeanor, enjoying lazy afternoons curled up next to her favorite humans.",
+        "Despite her relaxed attitude, Lucy is always ready for a game of fetch or a leisurely walk in the neighborhood."
+      ],
+      "sex": "Female",
+      "birthdate": "2018-09-10",
+      "age": 4,
+      "chip": "Yes",
+      "vaccines": ["Lyme Disease Vaccine", "Canine Parvovirus Vaccine"],
+      "diseases": ["None"],
+      "observations": [
+        "Lucy is good with children and strangers.",
+        "She enjoys treats and learning new tricks."
+      ]
+    },
+    {
+      "name": "Rocky",
+      "type": "Dog",
+      "main_image": "assets/img/dogsPics/mainPics/rocky.jpg",
+      "carousel_imgs": ["img1_url_dog5", "img2_url_dog5", "img3_url_dog5"],
+      "biography": [
+        "Rocky, the courageous and adventurous dog, was born on Valentine's Day in 2017.",
+        "His sleek coat and strong physique make him a striking presence in any setting.",
+        "Rocky is a protective and loyal companion, always ready for a new hiking trail or a game of fetch in the backyard.",
+        "With a heart full of courage and a spirit of exploration, Rocky is the perfect canine partner for those seeking a true adventurer."
+      ],
+      "sex": "Male",
+      "birthdate": "2017-02-14",
+      "age": 6,
+      "chip": "No",
+      "vaccines": ["Canine Distemper Vaccine", "Lyme Disease Vaccine"],
+      "diseases": ["None"],
+      "observations": [
+        "Rocky is an excellent guard dog.",
+        "He has a strong bond with his human companions."
+      ]
+    },
+    {
+      "name": "Coco",
+      "type": "Dog",
+      "main_image": "assets/img/dogsPics/mainPics/coco.jpg",
+      "carousel_imgs": ["img1_url_dog6", "img2_url_dog6", "img3_url_dog6"],
+      "biography": [
+        "Coco, the friendly and gentle dog, joined the family with a wagging tail on a sunny day in 2018.",
+        "Her sociable nature and soft, fluffy coat make her a beloved companion for people and other dogs alike.",
+        "Coco enjoys socializing at the park, playing with squeaky toys, and spreading joy with her cheerful demeanor.",
+        "With her friendly disposition and loving heart, Coco is the epitome of canine companionship and brings happiness to everyone around her."
+      ],
+      "sex": "Female",
+      "birthdate": "2018-12-10",
+      "age": 4,
+      "chip": "No",
+      "vaccines": ["Canine Parvovirus Vaccine", "Rabies Vaccine"],
+      "diseases": ["Canine Allergies"],
+      "observations": [
+        "Coco is good with children and strangers.",
+        "She loves treats and learning new tricks."
+      ]
+    },
+    {
+      "name": "Oscar",
+      "type": "Dog",
+      "main_image": "assets/img/dogsPics/mainPics/oscar.jpg",
+      "carousel_imgs": ["img1_url_dog7", "img2_url_dog7", "img3_url_dog7"],
+      "biography": [
+        "Oscar, the playful and charming pup, entered the household on a bright summer day in 2019.",
+        "From the beginning, Oscar's boundless energy and affectionate nature made him an instant hit with everyone in the family.",
+        "Known for his playful antics and love for fetch, Oscar is the go-to companion for outdoor games and adventures.",
+        "With his wagging tail and infectious enthusiasm, Oscar brings laughter and joy to every corner of the household."
+      ],
+      "sex": "Male",
+      "birthdate": "2019-06-25",
+      "age": 3,
+      "chip": "Yes",
+      "vaccines": ["Canine Distemper Vaccine", "Bordetella Vaccine"],
+      "diseases": ["None"],
+      "observations": [
+        "Oscar is great with kids and other pets.",
+        "He loves playing with squeaky toys."
+      ]
+    },
+    {
+      "name": "Molly",
+      "type": "Dog",
+      "main_image": "assets/img/dogsPics/mainPics/molly.jpg",
+      "carousel_imgs": ["img1_url_dog8", "img2_url_dog8", "img3_url_dog8"],
+      "biography": [
+        "Molly, the gentle giant with a heart of gold, entered the family on a snowy winter morning in 2017.",
+        "Her large paws and fluffy fur make her an endearing presence that brings comfort to everyone around her.",
+        "Molly is known for her calm and patient nature, especially with children, making her a beloved family dog.",
+        "Whether it's a cozy night by the fireplace or a walk in the snow, Molly's gentle spirit and warm eyes make every moment special."
+      ],
+      "sex": "Female",
+      "birthdate": "2017-01-05",
+      "age": 6,
+      "chip": "No",
+      "vaccines": ["Rabies Vaccine", "Canine Parvovirus Vaccine"],
+      "diseases": ["Canine Hip Dysplasia"],
+      "observations": [
+        "Molly is good with children and other animals.",
+        "She enjoys leisurely walks and napping by the fireplace."
+      ]
+    },
+    {
+      "name": "Max",
+      "type": "Dog",
+      "main_image": "assets/img/dogsPics/mainPics/max.jpg",
+      "carousel_imgs": ["img1_url_dog10", "img2_url_dog10", "img3_url_dog10"],
+      "biography": [
+        "Max, the energetic and playful pup, entered the household with a burst of excitement on a sunny spring day in 2020.",
+        "His floppy ears and wagging tail make him an irresistible bundle of joy that spreads happiness to everyone around him.",
+        "Max is known for his love of toys, especially tennis balls, and his boundless enthusiasm for outdoor activities.",
+        "With his friendly nature and playful spirit, Max is the perfect addition to any family looking for a loyal and joyful canine companion."
+      ],
+      "sex": "Male",
+      "birthdate": "2020-03-15",
+      "age": 3,
+      "chip": "No",
+      "vaccines": ["Canine Parvovirus Vaccine", "Bordetella Vaccine"],
+      "diseases": ["None"],
+      "observations": [
+        "Max is great with kids and other pets.",
+        "He loves playing fetch and going for long walks."
+      ]
+    }
+  ]
+}

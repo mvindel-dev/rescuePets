@@ -1,0 +1,26 @@
+<header class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid" *ngFor="let shelter of getShelters()">
+        <a class="navbar-brand d-flex align-items-center" [routerLink]="['/home']">
+            <img src="assets/img/provaLogo.png" alt="Logo" width="90" height="70" class="d-inline-block align-top">
+            <h1 class="ms-2">{{shelter.name}}</h1>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/home']" routerLinkActive="active" (click)="closeNavbar()">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/cats']" routerLinkActive="active" (click)="closeNavbar()">Cats</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/dogs']" routerLinkActive="active" (click)="closeNavbar()">Dogs</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</header>

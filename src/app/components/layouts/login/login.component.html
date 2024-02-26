@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row justify-content-center align-items-center min-vh-100">
+        <div class="col-lg-5">
+            <div class="card shadow-lg p-3 mb-5 bg-body rounded">
+                <div class="card-body p-4">
+                    <h1 class="text-center mb-4">INICIA SESSIÓ</h1>
+                    <form [formGroup]="formGroup" (ngSubmit)="login(formGroup.value)">
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Correu electrònic</label>
+                            <input label="email" id="email" type="text" class="form-control" formControlName="userMailControl" required="true">
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Contrasenya</label>
+                            <input type="password" class="form-control" id="password" formControlName="userPasswordControl" required="true">
+                        </div>
+                        <div class="mb-3">
+                            <p class="mb-0">No tens compte? <a routerLink="/register">Crea'l ara</a></p>
+                        </div>
+                        <button type="submit" class="btn btn-primary d-block w-100" [disabled]="!formGroup.valid">INICIAR SESSIÓ</button>
+                        <button type="button" class="btn btn-primary btn-block google-btn d-block w-100 mt-2" (click)="googleLogin()">
+                            <img src="/assets/icon/google.png" alt="google-icon" class="me-2">CONTINUA AMB GOOGLE
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <img src="data:image/jpeg;base64,{{img}}"> -->
+</div>
