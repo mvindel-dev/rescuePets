@@ -58,7 +58,6 @@ export class AnimalsService{
   }
 
   editAnimal(animal: Animal){
-    console.log(animal.id)
     let updatedAnimalData: Animal = animal;
     let documentRef: DocumentReference<Animal> = doc(this._firestore, 'pet', animal.id) as DocumentReference<Animal>;
 

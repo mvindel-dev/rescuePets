@@ -3,6 +3,7 @@ import { Auth, GoogleAuthProvider, User, UserCredential, createUserWithEmailAndP
 import { CollectionReference, Firestore, addDoc, collection, collectionData, limit, query, where } from '@angular/fire/firestore';
 import { Router } from '@angular/router';
 import { UserModel } from '../models/user.model';
+import { getAuth, sendEmailVerification } from "firebase/auth";
 
 
 
@@ -15,6 +16,7 @@ export class AuthService {
   isAdmin!:boolean;
   isVolunteer!:boolean;
   isLogged:boolean=false;
+  isVerified!:boolean;
 
   constructor(private _auth: Auth, private _route: Router, private _firestore: Firestore) {
     this._userCollection = collection(this._firestore, 'users') as CollectionReference<UserModel>;
@@ -30,7 +32,11 @@ export class AuthService {
       
       if(userCredential){
         const user : UserModel = {'id': this.getUid() || '','name': name, 'email': email, 'role': 'volunteer'}
-        addDoc(this._userCollection, user);
+        addDoc(this._userCollection, user).then(() => {
+          const auth = getAuth();
+          auth.languageCode = 'Es';
+          if(auth.currentUser) sendEmailVerification(auth.currentUser).then(() => window.alert('Siusplau, confirma la teva direcció de gmail abans de prosseguir al login'));
+        });
         this._route.navigate(['/login']);
       } 
       return true;
@@ -46,7 +52,18 @@ export class AuthService {
     try {
       let userCredential: UserCredential = await signInWithEmailAndPassword(this._auth, email, passwd);
       this.isLogged=true;
-      if(userCredential) this._route.navigate(['/home']);
+      if(userCredential.user.emailVerified == true) this.isVerified = true;
+      if(userCredential && this.isVerified){
+        this._route.navigate(['/home']);
+      }else{
+        this._route.navigate(['login']); 
+        let resend = window.confirm('No esta verificat el gmail encara. Vols reenviar el correu per poder verificarte?');
+        if(resend==true){
+          const auth = getAuth();
+          auth.languageCode = 'Es';
+          if(auth.currentUser) sendEmailVerification(auth.currentUser).then(() => window.alert('Correu reenviat satisfactoriament'));
+        }
+      } 
       return true;
     } catch(error: any) {
       console.log(error);
@@ -120,6 +137,10 @@ export class AuthService {
 
   checkIsLogged():boolean{
     return this.isLogged;
+  }
+
+  checkIsVerified():boolean{
+    return this.isVerified;
   }
 
 }
