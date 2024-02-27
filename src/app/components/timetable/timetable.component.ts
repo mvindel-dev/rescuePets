@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { Animal } from 'src/app/models/animal/animal';
 import { ReserveAnimal } from 'src/app/models/reserve/reserve-animal';
@@ -27,7 +28,7 @@ export class TimetableComponent implements OnInit{
   selectedPet: Animal | null = null;
 
 
-  constructor(private route: ActivatedRoute, private _volunteer: VolunteerService, private _animalsService: AnimalsService, private _petService: PetService, private _authService:AuthService) {
+  constructor(private route: ActivatedRoute, private _volunteer: VolunteerService, private _animalsService: AnimalsService, private _petService: PetService, private _authService:AuthService,  private _router:Router) {
     this._volunteer.retrieveReserves();
     this.reservedHours = this._volunteer.getHours();
     this.updateHours();
@@ -72,7 +73,8 @@ export class TimetableComponent implements OnInit{
 
   reserveHour(hora:any){
     if(this._authService.currentUser?.uid && this.selectedPet?.id){
-      this._volunteer.reserve(this._authService.currentUser?.uid, this.selectedPet, this.selectedDate.toLocaleDateString(), hora.hora);
+      let isDone = this._volunteer.reserve(this._authService.currentUser?.uid, this.selectedPet, this.selectedDate.toLocaleDateString(), hora.hora);
+      if(isDone) this._router.navigate(['/pet/'+this.selectedPet.name]);
     }
   }
 

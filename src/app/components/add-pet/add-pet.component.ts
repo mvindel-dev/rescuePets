@@ -106,7 +106,10 @@ export class AddPetComponent {
       id: this.generarStringAleatorio()
     };
     
-    this._animalService.addAnimal(animal);
+    let isCreated = this._animalService.addAnimal(animal);
+    if(isCreated) this._router.navigate([animal.type.toLowerCase()+'s']); else this._router.navigate(['/https://www.youtube.com/watch?v=QT0D3MtRjm8']);
+
+
   }
 
   generarStringAleatorio(): string {
@@ -191,7 +194,12 @@ export class AddPetComponent {
       "observations": this.observations
     };
 
-    this._animalService.editAnimal(updatedAnimalData);
+    console.log(this.id);
+
+    let isEdited = this._animalService.editAnimal(updatedAnimalData);
+    if(isEdited) this._router.navigate(['/'+updatedAnimalData.type.toLowerCase()+'s']); else this._router.navigate(['/https://www.youtube.com/watch?v=QT0D3MtRjm8']);
+
+
   }
 
 }

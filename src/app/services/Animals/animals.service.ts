@@ -5,6 +5,7 @@ import { Firestore, collectionData, deleteDoc, limit, setDoc, where} from '@angu
 import { CollectionReference, DocumentReference, addDoc, collection, doc, query } from 'firebase/firestore';
 import { Router } from '@angular/router';
 import { idToken } from '@angular/fire/auth';
+import { AuthService } from '../auth.service';
 
 // import { Observable, Subject } from 'rxjs';
 // import { HttpClient } from '@angular/common/http';
@@ -17,7 +18,7 @@ export class AnimalsService{
   private _petCollection: CollectionReference<Animal>;
   // private _dataLoadedSubject = new Subject<void>();
 
-  constructor(private _firestore: Firestore, private _router:Router) {
+  constructor(private _firestore: Firestore, private _router:Router, private _authService:AuthService) {
     this._petCollection = collection(this._firestore, 'pet') as CollectionReference<Animal>;
     this.retrieveAnimals()
   }
@@ -42,35 +43,59 @@ export class AnimalsService{
   }
 
 
-  addAnimal(animal: Animal){
-    addDoc(this._petCollection, animal);
-    this.retrieveAnimals();
-    this._router.navigate([animal.type.toLowerCase()+'s']);
+  addAnimal(animal: Animal): boolean{
+    let user_id= this._authService.currentUser?.uid;
+    if(user_id){
+      let isAdmin = this._authService.checkIsAdmin(user_id);
+      if(isAdmin){
+        addDoc(this._petCollection, animal);
+        this.retrieveAnimals();
+        return true;
+      }
+    }
+
+    return false;
   }
 
   editAnimal(animal: Animal){
+    console.log(animal.id)
     let updatedAnimalData: Animal = animal;
     let documentRef: DocumentReference<Animal> = doc(this._firestore, 'pet', animal.id) as DocumentReference<Animal>;
 
-    setDoc(documentRef, updatedAnimalData).then(() => {});
-    this._router.navigate(['/'+animal.type.toLowerCase()+'s']);
+    let user_id= this._authService.currentUser?.uid;
+    if(user_id){
+      let isAdmin = this._authService.checkIsAdmin(user_id);
+      if(isAdmin){
+        setDoc(documentRef, updatedAnimalData).then(() => {});
+        return true;
+      }
+    }
+
+    return false;
   }
 
-  deleteAnimal(animal:Animal){
+  deleteAnimal(animal:Animal): boolean{
     let documentRef: DocumentReference<Animal> = doc(this._firestore, 'pet', animal.id) as DocumentReference<Animal>;
 
-    try {
-      for(let i=0; i<this._animals.length;i++){
-        if(this._animals[i]==animal){
-          this._animals.splice(i);
+    let user_id= this._authService.currentUser?.uid;
+    if(user_id){
+      let isAdmin = this._authService.checkIsAdmin(user_id);
+      if(isAdmin){
+        try {
+          for(let i=0; i<this._animals.length;i++){
+            if(this._animals[i]==animal){
+              this._animals.splice(i);
+            }
+          }
+          deleteDoc(documentRef).then(() => {});
+          return true;          
+        } catch (error) {
+          console.log(error);
         }
       }
-      deleteDoc(documentRef).then(() => {});
-      this._router.navigate(['/'+animal.type.toLowerCase()+'s']);
-      
-    } catch (error) {
-      console.log(error);
-    }
+    } 
+
+    return false;
   }
   
   }
