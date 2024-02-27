@@ -28,23 +28,23 @@ import { authGuard } from './guards/auth.guard';
 
 
 const routes: Routes = [
-  { path: "login", component: LoginComponent},
-  { path:"register", component: RegisterComponent},
-  { path: "home", component: HomeComponent, canActivate:[authGuard]},
-  { path: "cats", component: CatsComponent, canActivate:[authGuard]},
-  { path: "dogs", component: DogsComponent, canActivate:[authGuard] },
+  { path: "home", component: HomeComponent},
+  { path: "login", component: LoginComponent, canActivate:[authGuard]},
+  { path:"register", component: RegisterComponent, canActivate:[authGuard]},
+  { path: "cats", component: CatsComponent },
+  { path: "dogs", component: DogsComponent },
   { 
     path: "pet", 
     children: [
-      { path: ":name", component: PetComponent, canActivate:[authGuard]},
+      { path: ":name", component: PetComponent},
       { path: "", redirectTo: '/home', pathMatch: 'full' }
     ]
   },
-  { path: "addAnimal", component: AddPetComponent, canActivate:[authGuard] },
+  { path: "addAnimal", component: AddPetComponent, canActivate:[authGuard]},
   { 
     path: "editAnimal",
     children: [
-      { path: ":name", component: AddPetComponent, canActivate:[authGuard] },
+      { path: ":name", component: AddPetComponent, canActivate:[authGuard]},
       { path: "", redirectTo: '/home', pathMatch: 'full' }
     ]
   
@@ -52,11 +52,11 @@ const routes: Routes = [
   {
     path: "timetable",
     children: [
-      { path: ":name", component: TimetableComponent, canActivate:[authGuard] },
+      { path: ":name", component: TimetableComponent, canActivate:[authGuard]},
       { path: "", redirectTo: '/home', pathMatch: 'full'}
     ]
   },
-  { path: "", redirectTo: '/login', pathMatch: 'full' },
+  { path: "", redirectTo: '/home', pathMatch: 'full' },
   { path: "**", component: PageNotFoundComponent },
 ];
 

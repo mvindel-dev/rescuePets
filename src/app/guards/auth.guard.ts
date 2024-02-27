@@ -27,6 +27,13 @@ export const authGuard: CanActivateFn = (route, state) => {
       router.navigate(["/login"]);
       return false;
     }
+  }else if(route.url[0].path == "editAnimal" || route.url[0].path == "addAnimal" || route.url[0].path == "timetable") {
+    if(authSessionService.isSessionActive()){
+      return true;
+    } else {
+      router.navigate(["/home"]);
+      return false;
+    }
   }
 
 

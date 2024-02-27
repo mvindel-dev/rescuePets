@@ -152,7 +152,6 @@ export class AddPetComponent {
   }
 
   loadAnimal(animal: Animal) {
-    console.log(animal);
 
     if(animal.type=='Cat') this.type='Cat'; else this.type='Dog';
     if(animal.sex=='Male') this.sex='Male'; else this.sex='Female';

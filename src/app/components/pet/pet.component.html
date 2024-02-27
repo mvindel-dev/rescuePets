@@ -59,9 +59,9 @@
             </ul>
           </div>
         </div>
-        <button class="btn btn-success m-2" [routerLink]="['../../timetable/', selectedPet?.name]">Care for {{selectedPet?.name}}</button>
-        <button class="btn btn-light" style="border: 1px solid black" [routerLink]="['../../editAnimal/', selectedPet?.name]">Edit {{selectedPet?.name}}</button>
-        <button class="btn btn-danger m-2" *ngIf="selectedPet!==null" (click)="deleteAnimal(selectedPet)">Delete {{selectedPet.name}}</button>
+        <button class="btn btn-success m-2" [routerLink]="['../../timetable/', selectedPet?.name]" *ngIf="isAdmin || isVolunteer">Care for {{selectedPet?.name}}</button>
+        <button class="btn btn-light" style="border: 1px solid black" [routerLink]="['../../editAnimal/', selectedPet?.name]" *ngIf="isAdmin">Edit {{selectedPet?.name}}</button>
+        <button class="btn btn-danger m-2" *ngIf="selectedPet!==null && isAdmin" (click)="deleteAnimal(selectedPet)">Delete {{selectedPet.name}}</button>
       </div>
     </div>
   </div>

@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { PetService } from 'src/app/services/Pets/pet.service';
 import { AnimalsService } from 'src/app/services/Animals/animals.service';
 import { Animal } from 'src/app/models/animal/animal';
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-pet',
@@ -12,12 +13,25 @@ import { Animal } from 'src/app/models/animal/animal';
 })
 export class PetComponent implements OnInit {
   selectedPet: Animal | null = null;
+  isAdmin!:boolean;
+  isVolunteer!:boolean;
 
   constructor(
     private route: ActivatedRoute,
     private petService: PetService,
-    private animalsService: AnimalsService
-  ) {}
+    private animalsService: AnimalsService,
+    private _authService:AuthService
+  ) {
+    this.loadRoles();
+  }
+
+  loadRoles(){
+    let userid = this._authService.currentUser?.uid;
+    if(userid && this._authService.checkIsLogged()){
+      this.isAdmin = this._authService.checkIsAdmin(userid);
+      this.isVolunteer = this._authService.checkIsVolunteer(userid);
+    }
+  }
 
   ngOnInit() {
     this.route.params.subscribe(params => {

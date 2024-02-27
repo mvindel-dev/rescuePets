@@ -1,5 +1,5 @@
-<div class="container">
-  <button class="btn btn-success mt-3 mb-3" [routerLink]="['/addAnimal']">Afegir gosset</button>
+<div class="container mt-3">
+  <button class="btn btn-success mt-3 mb-3" [routerLink]="['/addAnimal']" *ngIf="isAdmin">Afegir gosset</button>
   <div class="row">
     <div *ngFor="let dog of getDogs()" class="col-md-4 mb-3" (click)="selectDog(dog)" [routerLink]="['/pet', dog.name]">
       <div class="card">

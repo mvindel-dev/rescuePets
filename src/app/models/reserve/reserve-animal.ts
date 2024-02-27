@@ -4,5 +4,4 @@ export interface ReserveAnimal {
     animal_id:string;
     day:string;
     hour:number;
-    state:string;
 }

@@ -1,5 +1,5 @@
 <div class="container mt-3">
-  <button class="btn btn-success mt-3 mb-3" [routerLink]="['/addAnimal']">Afegir gatet</button>
+  <button class="btn btn-success mt-3 mb-3" [routerLink]="['/addAnimal']" *ngIf="isAdmin">Afegir gatet</button>
   <div class="row">
     <div *ngFor="let cat of getCats()" class="col-md-4 mb-3" (click)="selectCat(cat)" [routerLink]="['/pet', cat.name]">
       <div class="card">
